@@ -1,7 +1,13 @@
 package com.codepath.apps.simpletweets.models;
 
+import android.text.format.DateUtils;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.icu.text.SimpleDateFormat;
+
+import java.text.ParseException;
+import java.util.Locale;
 
 public class Tweet {
 
@@ -34,4 +40,5 @@ public class Tweet {
         tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
         return  tweet;
     }
+
 }
