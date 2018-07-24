@@ -21,7 +21,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
     private Context context;
     // pass tweet array in the constructor
     public TweetAdapter(List<Tweet> tweets){
-         mTweets = tweets;
+        mTweets = tweets;
     }
     // for each row, inflate layout and cache references into ViewHolder
 

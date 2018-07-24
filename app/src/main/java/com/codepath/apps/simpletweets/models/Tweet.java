@@ -4,11 +4,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Tweet {
+
     //List of attributes
     public String body;
     public String createdAt;
     public long uid; // database ID for the tweet
     public User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public long getUid() {
+        return uid;
+    }
+
+    public String getBody() {
+        return body;
+    }
 
     //Deserialize the JSON
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException{
