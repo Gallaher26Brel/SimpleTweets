@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
 
 import com.codepath.apps.simpletweets.adapters.TweetAdapter;
 import com.codepath.apps.simpletweets.models.Tweet;
@@ -42,6 +43,13 @@ import cz.msebera.android.httpclient.Header;
         //set adapter
         rvTweets.setAdapter(tweetAdapter);
         populateTimeline();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.timeline_activity_actions, menu);
+        return true;
     }
 
     private void populateTimeline (){
