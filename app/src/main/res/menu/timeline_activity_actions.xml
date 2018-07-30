@@ -5,9 +5,9 @@
     tools:context="com.codepath.apps.simpletweets.TimelineActivity">
 
     <item
-        android:id="@+id/action_compose"
+        android:id="@+id/btCompose"
         android:icon="@android:drawable/ic_menu_add"
-        app:showAsAction="ifRoom"
-        android:title="@string/compose" />
+        android:title="@string/compose"
+        app:showAsAction="ifRoom" />
 
 </menu>

@@ -1,11 +1,14 @@
  package com.codepath.apps.simpletweets;
 
+ import android.content.Intent;
  import android.os.Bundle;
  import android.support.v7.app.AppCompatActivity;
  import android.support.v7.widget.LinearLayoutManager;
  import android.support.v7.widget.RecyclerView;
  import android.util.Log;
  import android.view.Menu;
+ import android.view.MenuItem;
+ import android.widget.Button;
 
  import com.codepath.apps.simpletweets.adapters.TweetAdapter;
  import com.codepath.apps.simpletweets.models.EndlessRecyclerViewScrollListener;
@@ -26,6 +29,7 @@
     TweetAdapter tweetAdapter;
     ArrayList<Tweet> tweets;
     RecyclerView rvTweets;
+    Button btCompose;
     private EndlessRecyclerViewScrollListener scrollListener;
 
     @Override
@@ -65,6 +69,7 @@
             }
         });
         populateTimeline();
+        btCompose = findViewById(R.id.btCompose);
     }
 
      private void loadMoreTimeline(long uid) {
@@ -149,5 +154,19 @@
             }
         });
     }
+    @Override
+     public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.btCompose:
+                Intent composeNewTweet = new Intent(this, ComposeActivity.class);
+                this.startActivity(composeNewTweet);
+                return true;
+        }
+        return false;
+    }
+//    private void composeTweet(MenuItem item){
+//        Intent composeNewTweet = new Intent(this, ComposeActivity.class);
+//        this.startActivity(composeNewTweet);
+//    }
 }
 

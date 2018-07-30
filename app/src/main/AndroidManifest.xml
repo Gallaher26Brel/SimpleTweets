@@ -34,6 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.codepath.apps.simpletweets.TimelineActivity"></activity>
+        <activity android:name="com.codepath.apps.simpletweets.ComposeActivity"></activity>
     </application>
 
 </manifest>
