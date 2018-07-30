@@ -1,28 +1,27 @@
  package com.codepath.apps.simpletweets;
 
  import android.content.Intent;
- import android.os.Bundle;
- import android.os.SystemClock;
- import android.support.v7.app.AppCompatActivity;
- import android.support.v7.widget.LinearLayoutManager;
- import android.support.v7.widget.RecyclerView;
- import android.util.Log;
- import android.view.Menu;
- import android.view.MenuItem;
- import android.widget.Button;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
 
- import com.codepath.apps.simpletweets.adapters.TweetAdapter;
- import com.codepath.apps.simpletweets.models.EndlessRecyclerViewScrollListener;
- import com.codepath.apps.simpletweets.models.Tweet;
- import com.loopj.android.http.JsonHttpResponseHandler;
+import com.codepath.apps.simpletweets.adapters.TweetAdapter;
+import com.codepath.apps.simpletweets.models.EndlessRecyclerViewScrollListener;
+import com.codepath.apps.simpletweets.models.Tweet;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
- import org.json.JSONArray;
- import org.json.JSONException;
- import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
- import java.util.ArrayList;
+import java.util.ArrayList;
 
- import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.Header;
 
  public class TimelineActivity extends AppCompatActivity {
 
@@ -162,7 +161,7 @@
             case R.id.btCompose:
                 Intent composeNewTweet = new Intent(this, ComposeActivity.class);
                 this.startActivityForResult(composeNewTweet, REQUEST_CODE);
-                SystemClock.sleep(2000);
+//                SystemClock.sleep(2000);
                 populateTimeline();
                 return true;
         }
