@@ -2,6 +2,7 @@
 
  import android.content.Intent;
  import android.os.Bundle;
+ import android.os.SystemClock;
  import android.support.v7.app.AppCompatActivity;
  import android.support.v7.widget.LinearLayoutManager;
  import android.support.v7.widget.RecyclerView;
@@ -31,6 +32,7 @@
     RecyclerView rvTweets;
     Button btCompose;
     private EndlessRecyclerViewScrollListener scrollListener;
+    private final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,7 +161,9 @@
         switch(item.getItemId()){
             case R.id.btCompose:
                 Intent composeNewTweet = new Intent(this, ComposeActivity.class);
-                this.startActivity(composeNewTweet);
+                this.startActivityForResult(composeNewTweet, REQUEST_CODE);
+                SystemClock.sleep(2000);
+                populateTimeline();
                 return true;
         }
         return false;

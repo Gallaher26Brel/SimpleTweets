@@ -13,6 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:ems="10"
+        android:layout_margin="10dp"
         android:inputType="textMultiLine" />
 
     <Button
@@ -23,7 +24,7 @@
         android:onClick="composeTweet"
         android:layout_below="@+id/etCompose"
         android:layout_gravity="right"
-        android:text="Button" />
+        android:text="@string/btCompose" />
 
     <TextView
         android:id="@+id/tvCount"
@@ -32,5 +33,5 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/etCompose"
         android:layout_gravity="left"
-        android:text="TextView" />
+        android:text="160 char max" />
 </LinearLayout>
