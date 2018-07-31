@@ -2,17 +2,19 @@ package com.codepath.apps.simpletweets;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.codepath.apps.simpletweets.fragments.TweetsListFragment;
+import com.codepath.apps.simpletweets.fragments.TweetsPagerAdapter;
 import com.codepath.apps.simpletweets.models.EndlessRecyclerViewScrollListener;
 
  public class TimelineActivity extends AppCompatActivity {
 
-    TweetsListFragment fragmentTweetsLists;
+//    TweetsListFragment fragmentTweetsLists;
     Button btCompose;
     private EndlessRecyclerViewScrollListener scrollListener;
     private final int REQUEST_CODE = 1;
@@ -22,7 +24,15 @@ import com.codepath.apps.simpletweets.models.EndlessRecyclerViewScrollListener;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
-        fragmentTweetsLists = (TweetsListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_timeline);
+        // get the view pager
+        ViewPager vpPager = findViewById(R.id.viewpager);
+        // set the adapter for the view pager
+        vpPager.setAdapter(new TweetsPagerAdapter(getSupportFragmentManager(), this));
+        // setup the TabLayout to use the view pager
+        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(vpPager);
+
+//        fragmentTweetsLists = (TweetsListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_timeline);
 /*
         // find recycler view
         rvTweets = findViewById(R.id.rvTweet);
