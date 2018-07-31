@@ -8,12 +8,11 @@
     tools:context=".TimelineActivity"
     android:background="#eeffff">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvTweet"
+    <fragment
+        android:id="@+id/fragment_timeline"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        class="com.codepath.apps.simpletweets.fragments.MentionsTimelineFragment"
+        />
+
 </android.support.constraint.ConstraintLayout>
